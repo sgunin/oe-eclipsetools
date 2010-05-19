@@ -29,7 +29,7 @@ test ${Configure Host} = true && sudo -A sysctl -p
 # Cloning OE Repository
 mkdir -p ${Install Directory}
 cd ${Install Directory}
-git clone --verbose --progress ${Repository URL}
+git clone --verbose ${Repository URL}
 test ! -d org.openembedded.dev && echo "ERROR: Repository clone of ${Repository URL} failed. !!OTEWIZARDSTOP"
 
 # Configuring Machine Type
