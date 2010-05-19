@@ -2,7 +2,7 @@
 <feature
       id="org.openembedded.bc.feature"
       label="BitBake Commander Feature"
-      version="0.8.1.qualifier"
+      version="0.8.3.qualifier"
       provider-name="Ken Gilmer"
       os="linux">
 

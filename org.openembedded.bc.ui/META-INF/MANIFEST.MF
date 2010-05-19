@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: BitBake Commander UI Plug-in
 Bundle-SymbolicName: org.openembedded.bc.ui;singleton:=true
-Bundle-Version: 0.8.2.qualifier
+Bundle-Version: 0.8.3.qualifier
 Bundle-Activator: org.openembedded.bc.ui.Activator
 Bundle-Vendor: Ken Gilmer
 Require-Bundle: org.eclipse.ui,
