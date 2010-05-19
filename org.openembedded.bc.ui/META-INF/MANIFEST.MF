@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: BitBake Commander UI Plug-in
+Bundle-SymbolicName: org.openembedded.bc.ui;singleton:=true
+Bundle-Version: 0.8.2.qualifier
+Bundle-Activator: org.openembedded.bc.ui.Activator
+Bundle-Vendor: Ken Gilmer
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.jface.text,
+ org.eclipse.ui.editors,
+ org.eclipse.ui.ide,
+ org.eclipse.ui.console,
+ org.eclipse.core.filesystem
+Eclipse-LazyStart: true
+Bundle-ClassPath: .
