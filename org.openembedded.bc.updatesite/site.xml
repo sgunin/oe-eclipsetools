@@ -3,7 +3,7 @@
    <description url="http://bugcommunity.com/downloads/files/ote/updatesite">
       OTE Updatesite
    </description>
-   <feature url="features/org.openembedded.bc.feature_0.8.3.qualifier.jar" id="org.openembedded.bc.feature" version="0.8.3.qualifier" os="linux">
+   <feature url="features/org.openembedded.bc.feature_0.8.3.201005182245.jar" id="org.openembedded.bc.feature" version="0.8.3.201005182245" os="linux">
       <category name="Bitbake Commander"/>
    </feature>
    <category-def name="Bitbake Commander" label="OTE Bitbake Commander">
