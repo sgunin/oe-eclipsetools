@@ -25,8 +25,10 @@ import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
 import org.openembedded.bc.bitbake.BBLanguageHelper;
@@ -105,11 +107,19 @@ public abstract class AbstractBitbakeCommandAction implements IWorkbenchWindowAc
 	 */
 	protected IStatus execCommands(String[] cmds, final IProgressMonitor monitor) {
 		MessageConsole mc = bbs.getConsole();
-		final MessageConsoleStream cmd = mc.newMessageStream();
-		cmd.setColor(commandColor);
+		final MessageConsoleStream cmd = mc.newMessageStream();		
 		final MessageConsoleStream out = mc.newMessageStream();
 		final MessageConsoleStream err = mc.newMessageStream();
-		err.setColor(errorColor);
+		
+		PlatformUI.getWorkbench().getDisplay().syncExec(new Runnable() {
+			
+			@Override
+			public void run() {
+				cmd.setColor(commandColor);
+				err.setColor(errorColor);
+			}
+		});
+		
 		
 		try {
 			for (int i = 0; i < cmds.length; ++i) {
