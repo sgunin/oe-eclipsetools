@@ -9,14 +9,16 @@
 # {|D|Build Directory|R|${HOME}/oe_build||}
 # {|T|Repository URL|R|git://git.openembedded.net/openembedded||}
 # {|T|Init Script|R|init.sh||}
-# {|T|Distribution|R|angstrom-2008.1||}
-# {|T|Machine|R|om-gta01||}
+# {|T|Distribution|R|angstrom-2010.x||}
+# {|T|Machine|R|beagleboard||}
 # {|T|Package Cache Directory|R|${HOME}/sources||}
 
 # System Check
 which git
 which svn
 which python
+
+BITBAKE_VERSION=1.10.2
 
 # Directory Setup
 [ -d ${Install Directory} ] || mkdir -p ${Install Directory} 
@@ -25,10 +27,10 @@ mkdir -p build/conf
 [ -d ${Build Directory} ] || mkdir -p ${Build Directory}
 
 # Bitbake Setup
-wget http://download.berlios.de/bitbake/bitbake-1.8.18.tar.gz
-tar xfzv bitbake-1.8.18.tar.gz
-mv bitbake-1.8.18 bitbake
-rm bitbake-1.8.18.tar.gz
+wget http://download.berlios.de/bitbake/bitbake-$BITBAKE_VERSION.tar.gz
+tar xfzv bitbake-$BITBAKE_VERSION.tar.gz
+mv bitbake-$BITBAKE_VERSION bitbake
+rm bitbake-$BITBAKE_VERSION.tar.gz
 
 
 # OpenEmbedded Setup
