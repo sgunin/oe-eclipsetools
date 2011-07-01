@@ -34,6 +34,7 @@ import org.eclipse.swt.graphics.RGB;
 import org.eclipse.ui.editors.text.TextSourceViewerConfiguration;
 import org.openembedded.bc.bitbake.BBLanguageHelper;
 import org.openembedded.bc.bitbake.BBSession;
+import org.openembedded.bc.ui.preferences.PreferenceConstants;
 
 
 public class BitBakeSourceViewerConfiguration extends TextSourceViewerConfiguration {
@@ -52,10 +53,12 @@ public class BitBakeSourceViewerConfiguration extends TextSourceViewerConfigurat
 	private BBSession session;
 	private String targetFilePath;
 	private BBVariableTextHover textHover;
+	private boolean enableTextHover;
 
 	public BitBakeSourceViewerConfiguration(ISharedTextColors sharedColors, IPreferenceStore store) {
 		super(store);
 		fSharedColors = sharedColors;		
+		enableTextHover = store.getBoolean(PreferenceConstants.ENABLE_BITBAKE_BACKGROUND_SESSION);
 	}
 	
 	protected void setTargetFilePath(String targetFilePath) {
@@ -63,6 +66,9 @@ public class BitBakeSourceViewerConfiguration extends TextSourceViewerConfigurat
 	}
 
 	public ITextHover getTextHover(ISourceViewer sv, String contentType) {
+		if (!enableTextHover)
+			return null;
+		
 		if (textHover == null && session != null && targetFilePath != null) {
 			textHover = new BBVariableTextHover(session, targetFilePath);
 		}

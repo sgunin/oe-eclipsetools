@@ -290,5 +290,19 @@
          </enablement>
       </decorator>
    </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="org.openembedded.bc.ui.preferences.MainPreferencePage"
+            id="org.openembedded.bc.ui.preferences.MainPreferencePage"
+            name="Bitbake Commander">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="org.openembedded.bc.ui.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
 
 </plugin>
