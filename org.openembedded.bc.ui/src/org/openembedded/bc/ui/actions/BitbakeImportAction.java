@@ -60,7 +60,8 @@ public  class BitbakeImportAction extends AbstractBitbakeCommandAction {
 				}
 			
 				if (!workdir.exists()) {
-					execCommands(new String[] {"bitbake -c patch -b " + recipe.getLocationURI().getPath()}, monitor);
+					String packageName = getRecipeFromIFile(recipe);
+					execCommands(new String[] {"bitbake -c patch " + packageName}, monitor);
 				}
 				
 				if (!workdir.exists()) {
