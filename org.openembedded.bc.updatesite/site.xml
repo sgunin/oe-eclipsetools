@@ -6,6 +6,9 @@
    <feature url="features/org.openembedded.bc.feature_0.8.5.201106251359.jar" id="org.openembedded.bc.feature" version="0.8.5.201106251359" os="linux">
       <category name="Bitbake Commander"/>
    </feature>
+   <feature url="features/org.openembedded.bc.feature_0.8.6.201107011854.jar" id="org.openembedded.bc.feature" version="0.8.6.201107011854" os="linux">
+      <category name="Bitbake Commander"/>
+   </feature>
    <category-def name="Bitbake Commander" label="OTE Bitbake Commander">
       <description>
          Tools for working with Bitbake.
